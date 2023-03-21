@@ -24,6 +24,6 @@ describe("generate referral code", () => {
 
     expect(referralCode).toBe(`#FRIEND-#567-#235`);
 
-    expect(randomMock).toHaveBeenCalled();
+    expect(randomMock).toHaveBeenCalled(); // can also add a count for the number of calls ?
   });
 });
