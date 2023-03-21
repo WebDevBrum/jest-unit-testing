@@ -15,4 +15,15 @@ describe("generate referral code", () => {
 
     expect(referralCode).toMatch(/#FRIEND-#\d+-#1234/);
   });
+
+  test("Returns correct referral code", () => {
+    //Mocks the global math.random function
+    const randomMock = jest.spyOn(global.Math, "random").mockReturnValue(76567);
+
+    const referralCode = generateReferralCode(235);
+
+    expect(referralCode).toBe(`#FRIEND-#567-#235`);
+
+    expect(randomMock).toHaveBeenCalled();
+  });
 });
